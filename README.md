@@ -15,9 +15,9 @@ Sharpe Ratio = \frac{(R_p - R_f)}{\sigma_p}
 $$
 
 Where:
-- _Rp_ : Expected return of the portfolio
-- _Rf_ : Risk-free rate of return (e.g., government bond yield)
-- _σp_ : Standard deviation of the portfolio's returns (measure of volatility or risk)
+- __Rp__ : Expected return of the portfolio
+- __Rf__ : Risk-free rate of return (e.g., government bond yield)
+- __σp__s : Standard deviation of the portfolio's returns (measure of volatility or risk)
 
 So in this project, we want to maximize our pre-defined stocks portofolio from Indonesian stocks (UNVR, BRIS, ASII, TLKM, BSSR) using sharpe ratio maximization method that is basically only using these two concepts in statistics : mean and variance. Assuming that we have 10 millions IDR cash in hand and want to invest in those stocks. In order to maximize our return and minimize risk, using the method, we can obtain how much money should we invest in each stocks.
 
