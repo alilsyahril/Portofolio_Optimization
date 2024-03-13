@@ -6,13 +6,19 @@ Sharpe Ratio is a one of the simpliest methods in portofolio analysis. This meth
 
 In mathematical language :
 
-Returns : the average annual (or certain period) returns of each portofolio (in this context stocks portofolio)
+_*Returns (R)*_ : the average annual (or certain period) returns of each portofolio (in this context stocks portofolio)
 
-Risks : the standard deviation (square root of variance) of each portofolio values (in this context stocks portofolio)
+_*Risks (σ)*_ : the standard deviation (square root of variance) of each portofolio values (in this context stocks portofolio)
 
 $$
-\sqrt{a^2 + b^2} = c
+\Sharpe Ratio = (Rp - Rf) / σp
 $$
+
+Where:
+
+Rp: Expected return of the portfolio
+Rf: Risk-free rate of return (e.g., government bond yield)
+σp: Standard deviation of the portfolio's returns (measure of volatility or risk)
 
 So in this project, we want to maximize our pre-defined stocks portofolio from Indonesian stocks (UNVR, BRIS, ASII, TLKM, BSSR) using sharpe ratio maximization method that is basically only using these two concepts in statistics : mean and variance. Assuming that we have 10 millions IDR cash in hand and want to invest in those stocks. In order to maximize our return and minimize risk, using the method, we can obtain how much money should we invest in each stocks.
 
