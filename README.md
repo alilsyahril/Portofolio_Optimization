@@ -11,7 +11,7 @@ _*Returns (R)*_ : the average annual (or certain period) returns of each portofo
 _*Risks (σ)*_ : the standard deviation (square root of variance) of each portofolio values (in this context stocks portofolio)
 
 $$
-\Sharpe Ratio = (Rp - Rf) / σp
+Sharpe Ratio = \frac{(R_p - R_f)}{\sigma_p}
 $$
 
 Where:
