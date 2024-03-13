@@ -6,9 +6,9 @@ Sharpe Ratio is a one of the simpliest methods in portofolio analysis. This meth
 
 In mathematical language :
 
-_*Returns (R)*_ : the average annual (or certain period) returns of each portofolio (in this context stocks portofolio)
+__Returns (R)__ : the average annual (or certain period) returns of each portofolio (in this context stocks portofolio)
 
-_*Risks (σ)*_ : the standard deviation (square root of variance) of each portofolio values (in this context stocks portofolio)
+__Risks (σ)__ : the standard deviation (square root of variance) of each portofolio values (in this context stocks portofolio)
 
 $$
 Sharpe Ratio = \frac{(R_p - R_f)}{\sigma_p}
