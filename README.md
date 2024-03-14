@@ -36,3 +36,69 @@ python -m venv your_project_name
 ## to enter the venv
 source your_project_name/bin/activate
 ```
+
+## Results
+
+Using the pyfopt library we are going to get the best proportion of each stock that resulted the maximum sharpe ratio.
+
+```
+# Get the expected returns and covariance matrix
+mu = expected_returns.mean_historical_return(df)
+S = risk_models.sample_cov(df)
+
+# optimize for max sharpe ratio
+ef = EfficientFrontier(mu, S)
+weights = ef.max_sharpe() # maximizing sharpe ratio, how much the return increase in every risk increase
+cleaned_weights = ef.clean_weights() # rounding some near zero weights
+print(cleaned_weights)
+
+# print portofolio allocation
+ef.portfolio_performance(verbose=True)
+```
+
+We get this output
+```
+OrderedDict([('UNVR.JK', 0.0), ('BRIS.JK', 0.49753), ('ASII.JK', 0.23315), ('TLKM.JK', 0.1236), ('BSSR.JK', 0.14572)])
+Expected annual return: 24.0%
+Annual volatility: 21.4%
+Sharpe Ratio: 1.03
+```
+
+The Sharpe ratio we calculated (1.0) is significantly better than the previous value (0.6). While it still falls within the “adequate” range, it indicates a stronger return relative to the risk involved.
+
+To achieve this improved Sharpe ratio, we recommend investing in the following proportions:
+
+BRIS: 50%
+ASII: 23%
+TLKM: 12%
+BSSR: 15%
+UNVR is excluded due to its previously calculated negative returns, which would negatively impact the portfolio’s overall performance.
+
+Now, let’s consider how to allocate a specific investment amount, say IDR 10 million, to maximize returns based on this Sharpe ratio.
+
+```
+# Get the discrete allocations for each share with amount of money available
+from pypfopt.discrete_allocation import DiscreteAllocation, get_latest_prices
+
+latest_prices = get_latest_prices(df) # get latest price of each stocks
+weights = cleaned_weights
+da = DiscreteAllocation(weights, latest_prices, total_portfolio_value= 10000000)
+
+allocation, leftover = da.lp_portfolio()
+print('Discrete allocation:', allocation)
+print('Funds remaining: Rp {:.2f}'.format(leftover))
+```
+
+```
+Discrete allocation: {'BRIS.JK': 2861, 'ASII.JK': 412, 'TLKM.JK': 313, 'BSSR.JK': 389}
+Funds remaining: Rp 1988.13
+```
+
+Based on the calculated allocation and with a starting capital of IDR 10 million, here’s the recommended breakdown of our portfolio:
+
+BRIS: 2,861 shares
+ASII: 412 shares
+TLKM: 313 shares
+BSSR: 389 shares
+This allocation maximizes your portfolio’s return potential based on the Sharpe ratio. It’s important to note that due to potential fractional share limitations by some brokerages, you might end up with a slightly different number of shares and a small remaining cash balance which is IDR 1988.13.
+
