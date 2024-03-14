@@ -23,7 +23,7 @@ So in this project, we want to maximize our pre-defined stocks portfolio from In
 
 
 ## Setup
-install all the requirement libraries in the requirements_portopt.txt using command :
+Install all the requirement libraries in the requirements_portopt.txt using command :
 ```
 pip install -r requirements_portopt.txt
 ```
@@ -72,6 +72,7 @@ To achieve this improved Sharpe ratio, we recommend investing in the following p
 - ASII: 23%
 - TLKM: 12%
 - BSSR: 15%
+
 UNVR is excluded due to its previously calculated negative returns, which would negatively impact the portfolio’s overall performance.
 
 Now, let’s consider how to allocate a specific investment amount, say IDR 10 million, to maximize returns based on this Sharpe ratio.
@@ -100,5 +101,6 @@ Based on the calculated allocation and with a starting capital of IDR 10 million
 - ASII: 412 shares
 - TLKM: 313 shares
 - BSSR: 389 shares
+
 This allocation maximizes your portfolio’s return potential based on the Sharpe ratio. It’s important to note that due to potential fractional share limitations by some brokerages, you might end up with a slightly different number of shares and a small remaining cash balance which is IDR 1988.13.
 
