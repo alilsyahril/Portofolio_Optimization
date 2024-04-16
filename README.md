@@ -2,7 +2,7 @@
 This project will demonstrate several IHSG stocks portfolio optimization using Sharpe Ratio Maximization method.
 
 ## Background
-Sharpe Ratio is a one of the simpliest methods in portfolio analysis. This method simply adjust the portfolio return to the free-risk portfolio return and compare it to the risk of the portfolio itself. So basically the Sharpe Ratio measure how many returns of the portfolio above the free-risk portfolio in each of the risk unit increase. 
+Sharpe Ratio is a one of the simpliest methods in portfolio analysis. This method simply adjusts the portfolio return to the free-risk portfolio return and compares it to the risk of the portfolio itself. So basically the Sharpe Ratio measures how many returns of the portfolio above the free-risk portfolio in each of the risk unit increase. 
 
 In mathematical language :
 
